@@ -69,7 +69,7 @@ docker run --rm -p 8080:8080 calculator-api:local
 2. Install/configure Pipeline, Git, GitHub, JUnit, Docker Pipeline, Email Extension, and Workspace Cleanup plugins. Ensure the Jenkins agent can run `mvn`, `docker`, `docker compose`, and `curl`.
 3. In **Manage Jenkins → Credentials**, create a global Username with password credential named exactly `dockerhub-credentials`. Use Docker Hub username as the username and a Docker Hub access token as the password.
 4. Replace `YOUR_DOCKERHUB_USERNAME` and `YOUR_STUDENT_EMAIL@example.com` in `Jenkinsfile` before committing. Configure SMTP and the Extended E-mail Notification plugin in **Manage Jenkins → System**.
-5. Add a GitHub webhook with payload URL `https://YOUR_JENKINS_URL/github-webhook/`, content type `application/json`, and push events enabled. The `githubPush()` trigger starts the pipeline automatically.
+5. If Jenkins runs locally, expose it with a temporary public HTTPS tunnel, for example `cloudflared tunnel --url http://localhost:8081`. Set the Jenkins URL to the generated tunnel URL, then add a GitHub webhook at `<tunnel-url>/github-webhook/` with content type `application/json` and push events enabled. Keep the tunnel running while testing; the `githubPush()` trigger starts the pipeline automatically.
 6. Create the public Docker Hub repository named `calculator-api`. The pipeline tags images with Jenkins’ build number and `latest`.
 
 The Deploy stage is idempotent: Compose reconciles the existing stack, removes orphan containers, and waits for the proxied health endpoint to report `UP`.
