@@ -1,5 +1,7 @@
 # Calculator REST API — CI/CD Mini Project
 
+Harsh Gupta (IMT2023121)
+
 A production-style Calculator REST API built with Spring Boot and Maven, delivered through GitHub, Jenkins, Docker, and Docker Compose. This repository fulfils the CSE 816 Software Production Engineering mini-project scope.
 
 ## Architecture
@@ -18,13 +20,13 @@ Nginx is the public-facing reverse proxy. The Calculator API remains on the inte
 
 All operations accept numeric query parameters `a` and `b` and return JSON.
 
-| Operation | Request |
-|---|---|
-| Add | `GET /api/v1/add?a=2&b=3` |
-| Subtract | `GET /api/v1/subtract?a=2&b=3` |
-| Multiply | `GET /api/v1/multiply?a=2&b=3` |
-| Divide | `GET /api/v1/divide?a=10&b=4` |
-| Health | `GET /actuator/health` |
+| Operation | Request                          |
+| --------- | -------------------------------- |
+| Add       | `GET /api/v1/add?a=2&b=3`      |
+| Subtract  | `GET /api/v1/subtract?a=2&b=3` |
+| Multiply  | `GET /api/v1/multiply?a=2&b=3` |
+| Divide    | `GET /api/v1/divide?a=10&b=4`  |
+| Health    | `GET /actuator/health`         |
 
 Example response:
 
