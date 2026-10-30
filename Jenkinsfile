@@ -55,10 +55,10 @@ pipeline {
                 sh '''#!/bin/sh
                     export CALCULATOR_IMAGE="$IMAGE_REPOSITORY:$IMAGE_TAG"
                     export APP_VERSION="$IMAGE_TAG"
-                    docker compose pull calculator-api nginx
-                    docker compose up -d --remove-orphans
+                    docker compose pull calculator-api
+                    docker compose up -d --build --remove-orphans
                     for attempt in $(seq 1 12); do
-                      if curl --fail --silent http://localhost:${APP_PORT:-8080}/actuator/health | grep -q '"status":"UP"'; then
+                      if docker compose exec -T nginx wget -qO- http://127.0.0.1/actuator/health | grep -q '"status":"UP"'; then
                         exit 0
                       fi
                       sleep 5
