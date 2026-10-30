@@ -74,6 +74,18 @@ docker run --rm -p 8080:8080 calculator-api:local
 
 The Deploy stage is idempotent: Compose reconciles the existing stack, removes orphan containers, and waits for the proxied health endpoint to report `UP`.
 
+### Local webhook tunnel and live demo
+
+Install `cloudflared`, then start a temporary public tunnel while Jenkins is running:
+
+```bash
+cloudflared tunnel --url http://localhost:8081
+```
+
+Use the generated HTTPS URL in Jenkins **Manage Jenkins → System → Jenkins Location** and as the GitHub webhook URL with `/github-webhook/` appended. Keep the tunnel terminal open during the demo. Stop it with `Ctrl+C` after the webhook delivery and Jenkins build complete. A new tunnel URL must be configured again after restarting.
+
+For the live demo, make a small safe change, commit and push it from GitHub Desktop, show the successful webhook delivery, then show the green Jenkins stages, healthy Compose services, and API responses through Nginx.
+
 ## Evidence to capture
 
 See [`docs/submission-checklist.md`](docs/submission-checklist.md). [`docs/mini-project-report.md`](docs/mini-project-report.md) is a concise report draft: replace placeholders, export it as PDF, and add your own screenshots.
