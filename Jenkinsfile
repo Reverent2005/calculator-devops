@@ -73,14 +73,14 @@ pipeline {
     post {
         success {
             emailext(
-                to: 'YOUR_STUDENT_EMAIL@example.com',
+                to: 'harshgupta2300@gmail.com',
                 subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "Calculator API deployment succeeded. Build: ${env.BUILD_URL}"
             )
         }
         failure {
             emailext(
-                to: 'YOUR_STUDENT_EMAIL@example.com',
+                to: 'harshgupta2300@gmail.com',
                 subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "Calculator API pipeline failed. Review: ${env.BUILD_URL}"
             )
