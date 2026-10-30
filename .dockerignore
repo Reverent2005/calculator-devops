@@ -1,0 +1,10 @@
+.git
+.github
+.idea
+.vscode
+target
+*.iml
+*.log
+README.md
+docs
+SPE_Mini_Project.docx
