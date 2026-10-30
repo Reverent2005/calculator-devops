@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_REPOSITORY = 'YOUR_DOCKERHUB_USERNAME/calculator-api'
+        IMAGE_REPOSITORY = 'reverent/calculator-api'
         COMPOSE_PROJECT_NAME = 'calculator-devops'
     }
 
