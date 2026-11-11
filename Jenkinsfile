@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     triggers {
-        // Configure this GitHub webhook: https://JENKINS_URL/github-webhook/
         githubPush()
     }
 

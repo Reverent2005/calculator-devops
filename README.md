@@ -86,6 +86,8 @@ Use the generated HTTPS URL in Jenkins **Manage Jenkins → System → Jenkins L
 
 For the live demo, make a small safe change, commit and push it from GitHub Desktop, show the successful webhook delivery, then show the green Jenkins stages, healthy Compose services, and API responses through Nginx.
 
+For exact startup, restart, and webhook steps on demo day, see [`docs/live-demo-runbook.md`](docs/live-demo-runbook.md).
+
 ## Evidence to capture
 
 See [`docs/submission-checklist.md`](docs/submission-checklist.md). [`docs/mini-project-report.md`](docs/mini-project-report.md) is a concise report draft: replace placeholders, export it as PDF, and add your own screenshots.

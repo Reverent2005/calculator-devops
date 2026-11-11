@@ -1,9 +1,7 @@
 # CSE 816 Mini-Project Report: Calculator REST API CI/CD Pipeline
 
-**Student:** [Your name]  
-**Roll number:** [Your roll number]  
-**GitHub repository:** [repository URL]  
-**Docker Hub image:** [image URL]
+**Student:** Harsh Gupta
+**Roll number:** IMT2023121
 
 ## 1. Overview and architecture
 
